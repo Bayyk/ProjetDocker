@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: cluster-projet
+  labels:
+    app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - image: nico916/projectv3-web:v2
+        name: web
+        ports:
+        - containerPort: 80
+        env:
+        - name: HostRabbitmq
+          value: rabbitmq-api
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+  namespace: cluster-projet
+spec:
+  selector:
+    app: web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

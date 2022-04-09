@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: applicants-deployment
+  namespace: cluster-projet
+  labels:
+    app: applicants-api
+spec:
+  selector:
+    matchLabels:
+      app: applicants-api-pod
+  template:
+    metadata:
+      labels:
+        app: applicants-api-pod
+    spec:
+      containers:
+      - name: applicants-api
+        image: nico916/projectv2-applicants-api:v1
+        ports:
+          - containerPort: 80
+        env:
+        - name: ConnectionString
+          value: Server=database;User=sa;Password=Pass@word;Database=dotnetgigs.applicants;
+        - name: HostRabbitmq
+          value: rabbitmq-service
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: applicants-api-service
+  namespace: cluster-projet
+spec:
+  selector:
+    app: applicant-api-pod
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
