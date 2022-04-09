@@ -1,10 +1,10 @@
 # ProjetDocker
-Projet Docker dans le cadre de notre M1
+Projet Conteneurisation et Orchestration
 
 Le groupe est composé de : 
 - Nicolas DUMOULIN - Création des images, déploiement, bilan de santé, https
 - Diadji DIOP - Sécurité (https) , déploiement, création des images
-- Idris  - Création des images, bilan de santé 
+- Idris MROIVILI - Création des images, bilan de santé 
 - Mohamed MAATOUG - logs , déploiement, création des images
 
 
