@@ -10,3 +10,15 @@ Le groupe est composé de :
 
 Nous vous avons fournis les fichiers techniques de déploiements, des logs, bilan de santé, ainsi que les certificats pour la partie sécurité. 
 L'ingress est également présent. 
+
+Dans le fichier : 
+- image.yml : vous pourrez retrouver tous nos fichiers YAML ainsi que les certificats utilisés pour la partie sécurité.
+- Logs (dans image.yml) : Les fichiers utilisés pour les logs. 
+- appsettings.json : avec le lien de nos services jobs et identity. 
+- Le diaporama utilisé pour notre présentation de groupe. 
+
+
+Merci à vous, 
+
+Bonne continuation ! 
+
